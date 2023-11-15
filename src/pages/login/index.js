@@ -28,7 +28,7 @@ export default function Login() {
             />
             
             <div className={styles.buttons}>
-              <Link href="/">
+              <Link href="/booking">
                 <Button variant="filled">Log på</Button>
               </Link>
             </div>
