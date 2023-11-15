@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.image{
+    width: 65%;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 35%;
+    margin: 3rem;
+}
+
+.header{
+    font-size: 60px;
+}
+
+.headerTwo{
+    font-size: 30px;
+}
+
+.bodyText{
+    font-size: 16px;
+}
+
+.margin{
+    margin: 5px 0px;
+}
+
+.buttons{
+    margin: 20px 0px;
+}
