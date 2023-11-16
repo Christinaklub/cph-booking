@@ -1,0 +1,22 @@
+.container{
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.linkHeader{
+    color: white;
+    font-weight: 700;
+}
+
+.linkText{
+    padding-left: 30px;
+    color: white;
+    font-weight: 700;
+    margin-top: -10px;
+}
