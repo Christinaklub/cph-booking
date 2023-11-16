@@ -1,0 +1,21 @@
+.container{
+    margin:  20px 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.rightSide{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.link{
+    text-decoration: none;
+    margin-right: 10px;
+    color: black;
+    font-weight: 700;
+}
