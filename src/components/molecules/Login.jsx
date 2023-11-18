@@ -6,8 +6,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const supabase = createClient('https://dhufseluundbrnzuevyz.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRodWZzZWx1dW5kYnJuenVldnl6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTg5OTc5NzAsImV4cCI6MjAxNDU3Mzk3MH0.VcCKoXEy7dReIvwGsGNs40uz1vsEMh022GiOmNcEhqI');
-    //Vi skal sette ind VORES supabse URL og vores API key, men først finne ud av tablets^^ 
+    const supabase = createClient('https://txxxtrswrqluxdohetsm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eHh0cnN3cnFsdXhkb2hldHNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAwNTE4MjIsImV4cCI6MjAxNTYyNzgyMn0.c5FcVULcw1G-IULur56wxb3wnZZVXz6nkfAmOm1Sipc');
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -27,8 +26,8 @@ const Login = () => {
 
     async function loginNewUser() {
         const { data, error } = await supabase.auth.signInWithPassword({
-          email: email,
-          password: password,
+          email: "cph-st255@cphbusiness.dk",
+          password: "cph51943",
         //   options: {
         //     redirectTo: 'https//example.com/welcome'
         //   }
