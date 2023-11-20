@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import {createClient} from '@supabase/supabase-js';
 
-const addBooking = async (Stilling, Campus, Navn, Email, Lokaletype, Dato, Tidspunkt) => {
+const addBooking = async (Navn, Email, Lokaletype, Dato, Tidspunkt) => {
     try {
       const { data, error } = await supabase
         .from('bookingTable') // Navnet på vores tabell i databasen
-        .insert([{ Stilling, Campus, Navn, Email, Lokaletype, Dato, Tidspunkt }]);
+        .insert([{  Navn, Email, Lokaletype, Dato, Tidspunkt }]);
       
       if (error) {
         // Håndter feil her
