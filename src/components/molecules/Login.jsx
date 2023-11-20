@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import {createClient} from '@supabase/supabase-js';
+import Link from 'next/link';
+import styles from './Login.module.css'
+import { Button } from '@mantine/core';
+import { Checkbox } from '@mantine/core';
+import loginImg from '/public/loginImg.png'
+import Image from 'next/image';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -49,21 +55,33 @@ const Login = () => {
       }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>Log ind</h1>
+        <div className={styles.container} >
+        <Image className={styles.image} src={loginImg}/> 
+        <form onSubmit={handleSubmit} className={styles.login}>
+            <p className={styles.headerTwo}>EFIF</p>
+            <p className={styles.bodyText}>Log på</p>
+    
             { isLoading && <h2>Loader...</h2> }
             <label>
-                Email:
-                <input type="email" value={email} onChange={handleEmailChange} required />
+                <input className={styles.margin} type="email" value={email} onChange={handleEmailChange} required placeholder='Email' />
             </label>
             <br />
             <label>
-                Passord:
-                <input type="password" value={password} onChange={handlePasswordChange} required />
+                
+                <input className={styles.margin} type="password" value={password} onChange={handlePasswordChange} required placeholder='Adgangskode'/>
             </label>
             <br />
-            <button disabled={isLoading} type="submit">Log ind</button>
+
+            <Checkbox className={styles.logOff}
+            defaultChecked
+            label="Log mig ikke af"
+            />
+
+            <Link href="/booking">
+                <Button variant="filled" disabled={isLoading} type="submit">Log ind</Button>
+            </Link>
         </form>
+        </div>
     );
 }
 
