@@ -3,6 +3,7 @@ import Footer from '../molecules/Footer'
 import Header from '../molecules/Header'
 import { useRouter } from 'next/router'
 
+
 export default function DefaultLayout({children}) {
   const router = useRouter()
   return (

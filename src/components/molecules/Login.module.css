@@ -41,3 +41,11 @@
     border: none;
     margin-bottom: 20px;
 } 
+
+.logIn{
+    background-color: rgb(38, 114, 236);
+    color: white;
+    width: 100px;
+    border: none;
+
+}
