@@ -1,17 +1,23 @@
 import React, { useState } from 'react';
 import {createClient} from '@supabase/supabase-js';
+import Link from 'next/link';
+import styles from './Login.module.css'
+import { Button } from '@mantine/core';
+import { Checkbox } from '@mantine/core';
+import loginImg from '/public/loginImg.png'
+import Image     from 'next/image';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
 
-    const supabaseUrl= process.env.SUPABASE_URL
-    const supabaseKey= process.env.SUPABASE_KEY
+    // const supabaseUrl= process.env.SUPABASE_URL
+    // const supabaseKey= process.env.SUPABASE_KEY
 
-    const supabase = createClient (supabaseUrl, supabaseKey)
+    // const supabase = createClient (supabaseUrl, supabaseKey)
 
-    // const supabase = createClient('https://txxxtrswrqluxdohetsm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eHh0cnN3cnFsdXhkb2hldHNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAwNTE4MjIsImV4cCI6MjAxNTYyNzgyMn0.c5FcVULcw1G-IULur56wxb3wnZZVXz6nkfAmOm1Sipc');
+    const supabase = createClient('https://txxxtrswrqluxdohetsm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eHh0cnN3cnFsdXhkb2hldHNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAwNTE4MjIsImV4cCI6MjAxNTYyNzgyMn0.c5FcVULcw1G-IULur56wxb3wnZZVXz6nkfAmOm1Sipc');
 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
@@ -27,6 +33,8 @@ const Login = () => {
         // Here you can call your signup API or method
         console.log('Logger ind med', email, password);
         loginNewUser();
+        // redirecter dig til booking side når dit login er valideret 
+        window.location.href = "/booking";
     }
 
     async function loginNewUser() {
@@ -46,24 +54,39 @@ const Login = () => {
         console.log("data", data);
         console.log("Error", error);
 
+
       }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h1>Log ind</h1>
+        <div className={styles.container} >
+        <Image className={styles.image} src={loginImg}/> 
+        <form onSubmit={handleSubmit} className={styles.login}>
+            <p className={styles.headerTwo}>EFIF</p>
+            <p className={styles.bodyText}>Log på</p>
+    
             { isLoading && <h2>Loader...</h2> }
             <label>
-                Email:
-                <input type="email" value={email} onChange={handleEmailChange} required />
+                <input className={styles.margin} type="email" value={email} onChange={handleEmailChange} required placeholder='Email' />
             </label>
             <br />
             <label>
-                Passord:
-                <input type="password" value={password} onChange={handlePasswordChange} required />
+                
+                <input className={styles.margin} type="password" value={password} onChange={handlePasswordChange} required placeholder='Adgangskode'/>
             </label>
             <br />
-            <button disabled={isLoading} type="submit">Log ind</button>
+
+            <Checkbox className={styles.logOff}
+            defaultChecked
+            label="Log mig ikke af"
+            />
+            
+            <input variant="filled" disabled={isLoading} type="submit" value="Log in" className={styles.logIn}/>
+
+            <p>
+            Du får adgang gennem din uddannelsesinstitution ved at bruge det brugernavn og password som du plejer at bruge til institutionens systemer.
+            </p>
         </form>
+        </div>
     );
 }
 

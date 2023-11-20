@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.image{
+    width: 70%;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 35%;
+    margin: 3rem;
+}
+
+.header{
+    font-size: 60px;
+}
+
+.headerTwo{
+    font-size: 30px;
+}
+
+.bodyText{
+    font-size: 16px;
+}
+
+.margin{
+    margin: 5px 0px;
+    width: 300px;
+    border: 1px solid rgb(208, 208, 208);
+}
+
+.buttons{
+    margin: 20px 0px;
+}
+
+.logOff{
+    border: none;
+    margin-bottom: 20px;
+} 
+
+.logIn{
+    background-color: rgb(38, 114, 236);
+    color: white;
+    width: 100px;
+    border: none;
+
+}
