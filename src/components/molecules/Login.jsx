@@ -9,7 +9,7 @@ const Login = () => {
     const supabaseUrl= process.env.SUPABASE_URL
     const supabaseKey= process.env.SUPABASE_KEY
 
-    const supabase = createClient (supabaseUrl, supabaseUrl)
+    const supabase = createClient (supabaseUrl, supabaseKey)
 
     // const supabase = createClient('https://txxxtrswrqluxdohetsm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eHh0cnN3cnFsdXhkb2hldHNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAwNTE4MjIsImV4cCI6MjAxNTYyNzgyMn0.c5FcVULcw1G-IULur56wxb3wnZZVXz6nkfAmOm1Sipc');
 
