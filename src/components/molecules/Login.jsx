@@ -5,7 +5,7 @@ import styles from './Login.module.css'
 import { Button } from '@mantine/core';
 import { Checkbox } from '@mantine/core';
 import loginImg from '/public/loginImg.png'
-import Image from 'next/image';
+import Image     from 'next/image';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -33,6 +33,8 @@ const Login = () => {
         // Here you can call your signup API or method
         console.log('Logger ind med', email, password);
         loginNewUser();
+        // redirecter dig til booking side når dit login er valideret 
+        window.location.href = "/booking";
     }
 
     async function loginNewUser() {
@@ -51,6 +53,7 @@ const Login = () => {
         }
         console.log("data", data);
         console.log("Error", error);
+
 
       }
 
@@ -76,10 +79,12 @@ const Login = () => {
             defaultChecked
             label="Log mig ikke af"
             />
+            
+            <input variant="filled" disabled={isLoading} type="submit" value="Log in" className={styles.logIn}/>
 
-            <Link href="/booking">
-                <Button variant="filled" disabled={isLoading} type="submit">Log ind</Button>
-            </Link>
+            <p>
+            Du får adgang gennem din uddannelsesinstitution ved at bruge det brugernavn og password som du plejer at bruge til institutionens systemer.
+            </p>
         </form>
         </div>
     );
