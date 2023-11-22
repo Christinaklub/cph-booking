@@ -1,28 +1,19 @@
-// import React from 'react'
-// import classes from './SelectInfo.module.css'
-
-// export default function SelectDate() {
-//   return (
-//     <div className={classes.slideContent}>
-//         <div className={classes.orangeSquare}>
-          
-//         </div>
-//     </div>
-//   )
-// }
-
 import React from 'react';
 import classes from './SelectDate.module.css';
+import useMyContext from '@/context/my-context';
 
 function SelectDate() {
+
+  const { campus, stilling, lokale, tidspunkt } = useMyContext(); // allesammen?
+  // const { campus } = useMyContext()
 
   return (
     <div className={classes.slideContent}>
       <div className={classes.orangeSquare}>
-        <p>Campus: {}</p>
-        <p>Stilling: {}</p>
-        <p>Lokale Type: {}</p>
-        <p>Tidsinterval: {}</p>
+        <p>Campus: {campus}</p>
+        <p>Stilling: {stilling}</p>
+        <p>Lokale Type: {lokale}</p>
+        <p>Tidsinterval: {tidspunkt}</p>
       </div>
     </div>
   );

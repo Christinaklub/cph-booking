@@ -1,23 +1,40 @@
-import { Carousel } from '@mantine/carousel';
+// import { useState } from 'react';
+// import { Carousel } from '@mantine/carousel';
+// import classes from './SelectInfo.module.css';
+// import useMyContext from '@/context/my-context';
+
+import React, { useState, useEffect } from 'react';
 import classes from './SelectInfo.module.css';
+import useMyContext from '@/context/my-context';
 
-function SelectInfo() {
+function SelectInfo(props) {
+  const contextValue = useMyContext();
+  
+  // ???
+  function handleChangeCampus(event) {
+    contextValue.setCampus(event.target.value); 
+  }
+
+  function handleNext(){
+    console.log("du har trykket på next")
+    props.x.scrollNext();
+  }
+
   return (
-
-        <div className={classes.slideContent}>
-          <div className={classes.orangeSquare}>
-            <h2 className={classes.title}>Vælg venligst følgende informationer</h2>
-            <div className={classes.dropdownContainer}>
-            <label htmlFor="campus" className={classes.label}>
+    <div className={classes.slideContent}>
+      <div className={classes.orangeSquare}>
+        <h2 className={classes.title}>Vælg venligst følgende informationer</h2>
+        <div className={classes.dropdownContainer}>
+          <label htmlFor="campus" className={classes.label}>
             <span className={classes.required}>*</span>Campus:
-            </label>
-              <select id="campus" className={classes.dropdown}>
-                <option value="Lyngby">Lyngby</option>
-                <option value="Søerne">Søerne</option>
-                <option value="City">City</option>
-                <option value="Hillerød">Hillerød</option>
-              </select>
-            </div>
+          </label>
+          <select id="campus" className={classes.dropdown} value={contextValue.campus} onChange={handleChangeCampus}>
+            <option value="Lyngby">Lyngby</option>
+            <option value="Søerne">Søerne</option>
+            <option value="City">City</option>
+            <option value="Hillerød">Hillerød</option>
+          </select>
+        </div>
             <div className={classes.dropdownContainer}>
               <label htmlFor="stilling" className={classes.label}>
                 <span className={classes.required}> *</span>Stilling:
@@ -47,7 +64,7 @@ function SelectInfo() {
                 {/* husk at tilføje valg af tidspunkt */}
               </select>
             </div>
-            <button className={classes.button}>Næste</button>
+            <button className={classes.button} onClick={handleNext}>Næste</button>
           </div>
         </div>
   );
