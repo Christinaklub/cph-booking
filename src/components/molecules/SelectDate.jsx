@@ -4,8 +4,8 @@ import useMyContext from '@/context/my-context';
 
 function SelectDate() {
 
-  const { campus, stilling, lokale, tidspunkt } = useMyContext(); // allesammen?
-  // const { campus } = useMyContext()
+  const { campus, stilling, lokale, tidspunkt } = useMyContext(); 
+  
 
   return (
     <div className={classes.slideContent}>
