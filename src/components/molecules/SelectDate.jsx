@@ -1,12 +1,11 @@
+
+
 import React from 'react';
-import classes from './SelectDate.module.css';
 import useMyContext from '@/context/my-context';
+import classes from './SelectDate.module.css';
 
 function SelectDate() {
-
-  const { campus, stilling, lokale, tidspunkt } = useMyContext(); 
-  
-
+    const { campus, stilling, lokale, tidspunkt } = useMyContext(); 
   return (
     <div className={classes.slideContent}>
       <div className={classes.orangeSquare}>
