@@ -7,7 +7,7 @@ function BookingComponent() {
   useEffect(() => {
     async function fetchBookingData() {
       try {
-        // Her henter vi data fra bookingAvailable fra supabase
+        // Her henter vi data fra Supabse vores tabell heter bookingAvailable
         const { data, error } = await supabase.from('bookingAvailable').select('*');
         
         if (error) {
