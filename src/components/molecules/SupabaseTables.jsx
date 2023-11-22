@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {createClient} from '@supabase/supabase-js';
-import { supabase } from './supabase';
+
 
 const addBooking = async (Navn, Email, Lokaletype, Dato, Tidspunkt) => {
     try {
