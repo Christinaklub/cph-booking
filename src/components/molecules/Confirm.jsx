@@ -3,8 +3,43 @@ import classes from './Confirm.module.css';
 import Image from 'next/image';
 import profilpicture from '/public/profilpicture.jpeg'
 import lokaleTwo from '/public/lokaleTwo.svg'
+import addBooking from './addBooking'; 
 
 export default function Confirm() {
+
+  //Når man trykker på confirm knappen vil det sendes til databasen 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    
+    try {
+      await addBooking(
+        bookingInfo.Navn,
+        bookingInfo.Email,
+        bookingInfo.Lokaletype,
+        bookingInfo.Dato,
+        bookingInfo.Tidspunkt
+      );
+      
+      setBookingInfo({
+        Navn: '',
+        Email: '',
+        Lokaletype: '',
+        Dato: '',
+        Tidspunkt: '',
+      });
+    } catch (error) {
+      console.error('Feil under innsending av booking:', error.message);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setBookingInfo((prevInfo) => ({
+      ...prevInfo,
+      [name]: value,
+    }));
+  };
+
   return (
     <div className={classes.slideContent}>
         <div className={classes.orangeSquare}>

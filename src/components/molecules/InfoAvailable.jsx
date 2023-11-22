@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { supabase } from './supabase'; 
 
+
+//komponent om tilgjenglihet til tider og lokaler - vet ikke hva vi skal gjøre mer jeg er lost
 function BookingComponent() {
   const [bookingData, setBookingData] = useState([]);
 

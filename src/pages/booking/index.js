@@ -5,7 +5,7 @@ import React, {useEffect, useState} from 'react'
 import { Carousel } from '@mantine/carousel';
 import '@mantine/carousel/styles.css';
 import styles from './/index.module.css'
-
+import addBooking from '@/components/molecules/SupabaseTables';
 
 
 export default function Booking() {
