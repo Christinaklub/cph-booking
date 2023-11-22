@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
-import { supabase } from './supabase'; 
+import {createClient} from '@supabase/supabase-js';
+
 
 
 //komponent om tilgjenglihet til tider og lokaler - vet ikke hva vi skal gjøre mer jeg er lost
