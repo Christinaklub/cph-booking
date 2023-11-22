@@ -10,6 +10,11 @@ import styles from './/index.module.css'
 
 export default function Booking() {
   return (
+    <SelectInfo>
+    
+    </SelectInfo>
+    
+  )
     <div className={styles.container}>
     <Carousel slideSize="100%" height={700} draggable={false}>
       <Carousel.Slide><SelectInfo></SelectInfo></Carousel.Slide>

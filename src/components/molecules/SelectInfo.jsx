@@ -50,8 +50,6 @@ function SelectInfo() {
             <button className={classes.button}>Næste</button>
           </div>
         </div>
-  
-   
   );
 }
 
