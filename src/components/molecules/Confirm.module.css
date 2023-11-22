@@ -1,0 +1,40 @@
+.slideContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+  
+.orangeSquare {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 80%; 
+    border-radius: 5px;
+    border: 1px solid #00163B; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    margin-top: 30px;
+  }
+
+  .proImg{
+    width: 10%;
+    height: 10%;
+    border-radius: 100px;
+  }
+
+  .title{
+    font-size: 30px;
+  }
+
+  .headerTwo{
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: -10px;
+}
+
+.bodyText{
+    font-size: 16px;
+}
