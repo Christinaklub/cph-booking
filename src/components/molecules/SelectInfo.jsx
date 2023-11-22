@@ -3,8 +3,7 @@ import classes from './SelectInfo.module.css';
 
 function SelectInfo() {
   return (
-    <Carousel height={400} classNames={classes.carousel}>
-      <Carousel.Slide>
+
         <div className={classes.slideContent}>
           <div className={classes.orangeSquare}>
             <h2 className={classes.title}>Vælg venligst følgende informationer</h2>
@@ -51,9 +50,8 @@ function SelectInfo() {
             <button className={classes.button}>Næste</button>
           </div>
         </div>
-      </Carousel.Slide>
-      <Carousel.Slide>2</Carousel.Slide>
-    </Carousel>
+  
+   
   );
 }
 

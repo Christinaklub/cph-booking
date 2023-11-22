@@ -1,0 +1,20 @@
+.slideContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .orangeSquare {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 80%; 
+    background-color: #FBB040; 
+    border-radius: 5px;
+    border: 1px solid #00163B; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    margin-top: 30px;
+  }
