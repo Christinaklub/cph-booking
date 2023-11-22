@@ -10,11 +10,18 @@ import useMyContext from '@/context/my-context';
 function SelectInfo(props) {
   const contextValue = useMyContext();
   
-  // ???
+  //sørger for at når du har valgt noget kommer det frem på næste side. 
   function handleChangeCampus(event) {
     contextValue.setCampus(event.target.value); 
   }
+  function handleChangeStilling(event) {
+    contextValue.setStilling(event.target.value); 
+  }
+  function handleChangeLokale(event) {
+    contextValue.setLokale(event.target.value); 
+  }
 
+// ikke os der har kodet det, det er Mathias. Men denne funktion sørger bare for at vi henter den props der sørger for vi kan scroll når vi trykke på next knappen.
   function handleNext(){
     console.log("du har trykket på next")
     props.x.scrollNext();
@@ -39,7 +46,7 @@ function SelectInfo(props) {
               <label htmlFor="stilling" className={classes.label}>
                 <span className={classes.required}> *</span>Stilling:
               </label>
-              <select id="stilling" className={classes.dropdown}>
+              <select id="stilling" className={classes.dropdown} value={contextValue.stilling} onChange={handleChangeStilling}>
                 <option value="studerende">Studerende</option>
                 <option value="undervisere">Undervisere</option>
               </select>
@@ -48,7 +55,7 @@ function SelectInfo(props) {
               <label htmlFor="lokale" className={classes.label}>
                 Lokale type:
               </label>
-              <select id="lokale" className={classes.dropdown}>
+              <select id="lokale" className={classes.dropdown} value={contextValue.lokale} onChange={handleChangeLokale}>
                 <option value="" disabled selected hidden>Vælg lokale</option>
                 <option value="mødelokale">Mødelokale</option>
                 <option value="undervisningslokale">Undervisningslokale</option>
