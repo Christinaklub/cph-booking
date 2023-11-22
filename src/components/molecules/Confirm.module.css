@@ -1,6 +1,7 @@
 .slideContent {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 100%;
 }
@@ -8,10 +9,10 @@
 .orangeSquare {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    width: 100%; 
-    height: 80%; 
+    width: 60%; 
+    height: 500px; 
     border-radius: 5px;
     border: 1px solid #00163B; 
     padding: 20px; 
@@ -20,9 +21,10 @@
   }
 
   .proImg{
-    width: 10%;
-    height: 10%;
+    width: 30%;
+    height: 30%;
     border-radius: 100px;
+    margin-bottom: 20px;
   }
 
   .title{
@@ -32,9 +34,60 @@
   .headerTwo{
     font-size: 23px;
     font-weight: 700;
-    margin-bottom: -10px;
+    /* margin-bottom: -10px; */
 }
 
 .bodyText{
     font-size: 16px;
+    margin-top: -15px;
 }
+
+.bodyTextBold{
+    font-weight: 700;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.leftSideInfo{
+    width: 40%;
+}
+
+.rightSideInfo{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+.button {
+    width: 150px;
+    padding: 10px 20px;
+    border: 2px solid #00163B;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #00163B;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+.buttonBlue {
+    width: 150px;
+    padding: 10px 20px;
+    border: 2px solid #00163B;
+    border-radius: 4px;
+    background-color: #00163B;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+
+  .modal{
+    text-align: center;
+    padding: 0 0 100px 0;
+  }
+
+  
