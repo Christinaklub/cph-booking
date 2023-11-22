@@ -3,7 +3,7 @@ import classes from './Confirm.module.css';
 import Image from 'next/image';
 import profilpicture from '/public/profilpicture.jpeg'
 import lokaleTwo from '/public/lokaleTwo.svg'
-import addBooking from './addBooking'; 
+import addBooking from './SupabaseTables'; 
 
 export default function Confirm() {
 
