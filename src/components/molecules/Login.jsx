@@ -5,7 +5,7 @@ import styles from './Login.module.css'
 import { Button } from '@mantine/core';
 import { Checkbox } from '@mantine/core';
 import loginImg from '/public/loginImg.png'
-import Image     from 'next/image';
+import Image from 'next/image';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -44,19 +44,19 @@ const Login = () => {
 
         if (data && data.user) {
             // Gemme user info i context.
-            console.log("Successful login, email is", data.user.email);
+            console.log(data.user.email);
         }
         console.log("data", data);
         console.log("Error", error);
 
 
-
+// Denne funksjonen skal ned til email og passord og log in knappen 
             const handleLogin = async () => {
                 try {
                 
                 if (
-                    (email === 'autorisert1@example.com' && password === 'passord1') ||
-                    (email === 'autorisert2@example.com' && password === 'passord2')
+                    (email === 'cph-nj247@cphbusiness.dk' && password === 'Cph18868') ||
+                    (email === 'cph-st255@cphbusiness.dk' && password === 'cph51943')
                 ) {
                     // Autentisering vellykket
                     console.log('Innlogging vellykket for autorisert bruker:', email);
@@ -65,32 +65,9 @@ const Login = () => {
                     console.error('Feil e-postadresse eller passord.');
                 }
                 } catch (error) {
-                console.error('Feil ved innlogging:', error.message);
+                console.error('Feil ved indlogging:', error.message);
                 }
             };
-
-//   return (
-//     <div>
-//       <input
-//         type="email"
-//         placeholder="E-post"
-//         value={email}
-//         onChange={(e) => setEmail(e.target.value)}
-//       />
-//       <input
-//         type="password"
-//         placeholder="Passord"
-//         value={password}
-//         onChange={(e) => setPassword(e.target.value)}
-//       />
-//       <button onClick={handleLogin}>Logg inn</button>
-//     </div>
-//   );
-// }
-
-
-
-
 
       }
 
