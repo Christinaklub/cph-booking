@@ -57,7 +57,8 @@
 
 .rightSideInfo{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 50%;
   }
 
@@ -71,7 +72,7 @@
     cursor: pointer;
     font-weight: 500;
     margin-top: 1rem;
-    margin-left: 260px;
+    margin-left: 50px;
   }
 
 .buttonBlue {

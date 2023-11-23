@@ -9,7 +9,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button } from '@mantine/core';
 import Link from 'next/link';
 
-export default function Confirm() {
+export default function Confirm(props) {
 
   //Når man trykker på confirm knappen vil det sendes til databasen 
   const handleSubmit = async (event) => {
@@ -49,6 +49,13 @@ export default function Confirm() {
   //modal open og close
   const [opened, { open, close }] = useDisclosure(false);
 
+
+// Tilbage knap
+  function handleBack(){
+    console.log("du har trykket på tilbage")
+    props.x.scrollPrev();
+  }
+
   return (
     <div className={classes.slideContent}>
         <div className={classes.orangeSquare}>
@@ -73,6 +80,7 @@ export default function Confirm() {
             
             <div className={classes.rightSideInfo}>
                 <Image className={classes.img} src={lokaleTwo}/>
+                <button className={classes.button} onClick={handleBack}>Tilbage</button>
                 <button className={classes.button} onClick={open}>Bekræft</button>
             </div>
         </div>
