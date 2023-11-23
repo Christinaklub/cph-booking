@@ -6,8 +6,10 @@ import classes from './SelectDate.module.css';
 import '@mantine/dates/styles.css';
 
 function SelectDate(props) {
-    const [value, setValue] = useState("");
-    const { campus, stilling, lokale, tidspunkt } = useMyContext(); 
+    // const contextValue = useMyContext();
+
+    const [value, setValue] = useState("")
+    const { campus, stilling, lokale, tidspunkt, } = useMyContext(); 
 
     function handleNext(){
         console.log("du har trykket på next")
@@ -19,6 +21,9 @@ function SelectDate(props) {
       }
 
 
+    //   function handleChangeDato(event) {
+    //     contextValue.setDato(event.target.value)
+    //   }
 
   return (
     <div className={classes.slideContent}>
