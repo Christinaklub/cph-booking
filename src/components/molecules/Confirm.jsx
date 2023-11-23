@@ -10,26 +10,28 @@ import { Modal, Button } from '@mantine/core';
 import Link from 'next/link';
 
 export default function Confirm(props) {
+  
 
   //Når man trykker på confirm knappen vil det sendes til databasen 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     
     try {
       await addBooking(
-        bookingInfo.Navn,
-        bookingInfo.Email,
-        bookingInfo.Lokaletype,
-        bookingInfo.Dato,
-        bookingInfo.Tidspunkt
+        campus,
+        stilling,
+        new Date(),                 
+        tidspunkt,
+        lokale,
       );
       
-      setBookingInfo({
-        Navn: '',
-        Email: '',
-        Lokaletype: '',
+      setBookingInfo({ 
+        Campus: '',
+        Stilling: '',
         Dato: '',
         Tidspunkt: '',
+        Lokaletype: '',
       });
     } catch (error) {
       console.error('Feil under innsending av booking:', error.message);
@@ -81,7 +83,7 @@ export default function Confirm(props) {
             <div className={classes.rightSideInfo}>
                 <Image className={classes.img} src={lokaleTwo}/>
                 <button className={classes.button} onClick={handleBack}>Tilbage</button>
-                <button className={classes.button} onClick={open}>Bekræft</button>
+                <button className={classes.button} onClick={handleSubmit}>Bekræft</button>
             </div>
         </div>
     </div>
