@@ -16,7 +16,7 @@ export default function Booking() {
     <Carousel slideSize="100%" height={700} draggable={false} withControls={false} getEmblaApi={setEmbla}>
       <Carousel.Slide><SelectInfo x={embla} ></SelectInfo></Carousel.Slide>
       <Carousel.Slide><SelectDate x={embla}></SelectDate></Carousel.Slide>
-      <Carousel.Slide><Confirm></Confirm></Carousel.Slide>
+      <Carousel.Slide><Confirm x={embla}></Confirm></Carousel.Slide>
     </Carousel>
     </div>
     
