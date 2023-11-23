@@ -38,7 +38,7 @@ function SelectDate(props) {
         </div>
 
         <div className={classes.blueSquare}>
-            <DatePicker allowDeselect value={value} onChange={setValue} size={'md'} className={classes.calendar} />
+            <DatePicker allowDeselect value={value} onChange={setValue} size={'md'} className={classes.calendar}/>
         </div>
       </div>
     </div>
@@ -46,3 +46,4 @@ function SelectDate(props) {
 }
 
 export default SelectDate;
+
