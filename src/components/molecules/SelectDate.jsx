@@ -19,7 +19,7 @@ function SelectDate(props) {
   return (
     <div className={classes.slideContent}>
       <div className={classes.orangeSquare}>
-        <div>
+        <div className={classes.leftInfo}>
             <p className={classes.bodyText}><span className={classes.bodyTextBold}>Campus: </span>{campus}</p>
             <p className={classes.bodyText}><span className={classes.bodyTextBold}>Stilling: </span> {stilling}</p>
             <p className={classes.bodyText}><span className={classes.bodyTextBold}>Lokale Type: </span> {lokale}</p>

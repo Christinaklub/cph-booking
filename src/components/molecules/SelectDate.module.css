@@ -6,6 +6,11 @@
     width: 100%;
   }
   
+  .leftInfo{
+    width: 50%;
+    padding: 0px 60px;
+  }
+
   .orangeSquare {
     display: flex;
     flex-direction: row;
