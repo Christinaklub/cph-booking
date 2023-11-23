@@ -21,7 +21,7 @@ function BookingComponent() {
           setBookingData(data);
         }
       } catch (error) {
-        console.error('Feil under henting av data:', error.message);
+        console.error('Feil henting av data:', error.message);
       }
     }
 
