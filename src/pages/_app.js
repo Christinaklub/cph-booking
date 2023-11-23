@@ -12,6 +12,7 @@ import { MyContext } from "@/context/my-context";
     const [stilling, setStilling] = useState("");
     const [lokale, setLokale] = useState("");
     const [tidspunkt, setTidspunkt] = useState("");
+    const [dato, setDato] = useState("");
 
   const contextValue = {
     campus,
@@ -22,6 +23,8 @@ import { MyContext } from "@/context/my-context";
     setLokale,
     tidspunkt,
     setTidspunkt,
+    dato,
+    setDato,
   };
   
 
