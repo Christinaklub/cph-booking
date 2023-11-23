@@ -14,7 +14,7 @@ export default function Confirm(props) {
 
   //Når man trykker på confirm knappen vil det sendes til databasen 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+    // event.preventDefault();
 
     
     try {
@@ -84,7 +84,7 @@ export default function Confirm(props) {
             <div className={classes.rightSideInfo}>
                 <Image className={classes.img} src={lokaleTwo}/>
                 <button className={classes.button} onClick={handleBack}>Tilbage</button>
-                <button className={classes.button} onClick={handleSubmit}>Bekræft</button>
+                <button className={classes.button} onClick={event => {handleSubmit(); open()}}> bekræft </button>
             </div>
         </div>
     </div>
