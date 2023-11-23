@@ -21,6 +21,10 @@ function SelectInfo(props) {
     contextValue.setLokale(event.target.value); 
   }
 
+  function handleChangeTidspunkt(event) {
+    contextValue.setTidspunkt(event.target.value)
+  }
+
 // ikke os der har kodet det, det er Mathias. Men denne funktion sørger bare for at vi henter den props der sørger for vi kan scroll når vi trykke på next knappen.
   function handleNext(){
     console.log("du har trykket på next")
@@ -66,9 +70,12 @@ function SelectInfo(props) {
               <label htmlFor="tidspunkt" className={classes.label}>
                 Tidsinterval:
               </label>
-              <select id="tidspunkt" className={classes.dropdown}>
+              <select id="tidspunkt" className={classes.dropdown} value={contextValue.tidspunkt} onChange={handleChangeTidspunkt}>
                 <option value="" disabled selected hidden>Vælg tidspunkt</option>
-                {/* husk at tilføje valg af tidspunkt */}
+                <option value="08.00-10.00">08.00-10.00</option>
+                <option value="10.00-12.00">10.00-12.00</option>
+                <option value="12.00-14.00">12.00-14.00</option>
+                <option value="14.00-15.00">14.00-15.00</option>
               </select>
             </div>
             <button className={classes.button} onClick={handleNext}>Næste</button>
