@@ -13,6 +13,10 @@ function SelectDate(props) {
         console.log("du har trykket på next")
         props.x.scrollNext();
       }
+    function handleBack(){
+        console.log("du har trykket på next")
+        props.x.scrollPrev();
+      }
 
 
 
@@ -24,6 +28,7 @@ function SelectDate(props) {
             <p className={classes.bodyText}><span className={classes.bodyTextBold}>Stilling: </span> {stilling}</p>
             <p className={classes.bodyText}><span className={classes.bodyTextBold}>Lokale Type: </span> {lokale}</p>
             <p className={classes.bodyText}><span className={classes.bodyTextBold}>Tidsinterval: </span>{tidspunkt}</p>
+            <button className={classes.button} onClick={handleBack}>Tilbage</button>
             <button className={classes.button} onClick={handleNext}>Næste</button>
         </div>
 
