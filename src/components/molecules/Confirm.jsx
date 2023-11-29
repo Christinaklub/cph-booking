@@ -26,7 +26,7 @@ export default function Confirm(props) {
         lokale,
       );
       
-      // IDK - setBookingInfo er ikke definert endu 
+      // IDK - setBookingInfo er ikke definert endu, gjør dette til eksamen
       setBookingInfo({ 
         Campus: '',
         Stilling: '',
