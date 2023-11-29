@@ -50,7 +50,7 @@ const Login = () => {
         console.log("Error", error);
 
 
-// Denne funksjonen skal ned til email og passord og log in knappen 
+// Denne funksjonen virker ikke fordi den prøver å connecte supabase manuelt som ikke gir noen mening 
             const handleLogin = async () => {
                 try {
                 
@@ -69,6 +69,45 @@ const Login = () => {
                 }
             };
 
+            // Dette er n funksjonn christina skal fikse men hun må finne ud av ting 
+            // const handleLogin = async () => {
+            //     try {
+            //         let authorized = false;
+            
+            //         // Sjekk om den innloggede brukeren er en av de autoriserte brukerne
+            //         if (
+            //             (email === 'cph-nj247@cphbusiness.dk' && password === 'Cph18868') ||
+            //             (email === 'cph-st255@cphbusiness.dk' && password === 'cph51943')
+            //         ) {
+            //             // Setter variabelen til sann hvis innloggingen er fra en autorisert bruker
+            //             authorized = true;
+            //         }
+            
+            //         // Hvis innloggingen kommer fra en autorisert bruker, logg inn med Supabase
+            //         if (authorized) {
+            //             const { data, error } = await supabase.auth.signInWithPassword({
+            //                 email: email,
+            //                 password: password,
+            //             });
+            
+            //             setIsLoading(false);
+            
+            //             if (data && data.user) {
+            //                 // Gemme brukerinfo i kontekst eller gjøre noe annet
+            //                 console.log(data.user.email);
+            //             }
+            //             console.log("data", data);
+            //             console.log("Error", error);
+            //         } else {
+            //             // Hvis ikke en autorisert bruker, gi en feilmelding eller utfør en passende handling
+            //             console.error('Feil e-postadresse eller passord.');
+            //         }
+            //     } catch (error) {
+            //         console.error('Feil ved innlogging:', error.message);
+            //     }
+            // };
+            
+
       }
 
     return (
@@ -85,7 +124,13 @@ const Login = () => {
             <br />
             <label>
                 
-                <input className={styles.margin} type="password" value={password} onChange={handlePasswordChange} required placeholder='Adgangskode'/>
+                <input className={styles.margin} type="password" value={password} onChang={handlePasswordChange}
+
+                    // onChange={(event) =>{
+                    //     handlePasswordChange(event);
+                    //     handleLogin(); 
+                    //     }}
+                     required placeholder='Adgangskode'/>
             </label>
             <br />
 
