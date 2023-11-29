@@ -40,6 +40,7 @@ function SelectInfo(props) {
             <span className={classes.required}>*</span>Campus:
           </label>
           <select id="campus" className={classes.dropdown} value={contextValue.campus} onChange={handleChangeCampus}>
+          <option value="" disabled selected hidden>Vælg Campus</option>
             <option value="Lyngby">Lyngby</option>
             <option value="Søerne">Søerne</option>
             <option value="City">City</option>
@@ -51,6 +52,7 @@ function SelectInfo(props) {
                 <span className={classes.required}> *</span>Stilling:
               </label>
               <select id="stilling" className={classes.dropdown} value={contextValue.stilling} onChange={handleChangeStilling}>
+              <option value="" disabled selected hidden>Vælg Stilling</option>
                 <option value="studerende">Studerende</option>
                 <option value="undervisere">Undervisere</option>
               </select>
