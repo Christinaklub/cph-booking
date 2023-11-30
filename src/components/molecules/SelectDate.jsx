@@ -65,7 +65,7 @@ function SelectDate(props) {
             <span className={classes.required}></span>Dato:
           </label>
           <select id='dato' className={classes.dropdown} >
-            <option value="" disabled selected hidden><DisplaySelectedDate selectedDate={selectedDate}/></option>
+            <option value="" disabled selected hidden><DisplaySelectedDate selectedDate={selectedDate}></DisplaySelectedDate></option>
           </select>
 
             <button className={classes.button} onClick={handleBack}>Tilbage</button>
