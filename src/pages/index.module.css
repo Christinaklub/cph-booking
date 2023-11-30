@@ -9,3 +9,11 @@
     color: #fff;
     cursor: pointer;
   }
+
+  .btnBox{
+    display: flex;
+    justify-content: center;
+    padding: 75px;
+  }
+
+  
