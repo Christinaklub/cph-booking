@@ -31,8 +31,6 @@ function SelectDate(props) {
       }
 
 
-
-
   return (
     <div className={classes.slideContent}>
       <div className={classes.orangeSquare}>
@@ -41,31 +39,31 @@ function SelectDate(props) {
             <span className={classes.required}>*</span>Campus:
           </label>
           <select id='campus' className={classes.dropdown} disabled>
-            <option value="" disabled selected hidden>{campus}</option>
+            <option value="" hidden>{campus}</option>
           </select>
           <label htmlFor="stilling" className={classes.label}>
             <span className={classes.required}>*</span>Stilling:
           </label>
           <select id='stilling' className={classes.dropdown} disabled>
-            <option value="" disabled selected hidden>{stilling}</option>
+            <option value="" hidden>{stilling}</option>
           </select>
           <label htmlFor="lokale" className={classes.label}>
             <span className={classes.required}></span>Lokale:
           </label>
           <select id='lokale' className={classes.dropdown} disabled>
-            <option value="" disabled selected hidden>{lokale}</option>
+            <option value="" hidden>{lokale}</option>
           </select>
           <label htmlFor="tidspunkt" className={classes.label}>
             <span className={classes.required}></span>Tidspunkt:
           </label>
           <select id='tidspunkt' className={classes.dropdown} disabled>
-            <option value="" disabled selected hidden>{tidspunkt}</option>
+            <option value="" hidden>{tidspunkt}</option>
           </select>
           <label htmlFor="dato" className={classes.label}>
             <span className={classes.required}></span>Dato:
           </label>
           <select id='dato' className={classes.dropdown} >
-            <option value="" disabled selected hidden><DisplaySelectedDate selectedDate={selectedDate}></DisplaySelectedDate></option>
+            <option value="" hidden></option>
           </select>
 
             <button className={classes.button} onClick={handleBack}>Tilbage</button>
