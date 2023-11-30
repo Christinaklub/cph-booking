@@ -4,6 +4,8 @@ import "@mantine/core/styles.css";
 import { MantineProvider } from "@mantine/core";
 import DefaultLayout from "../components/layout/DefaultLayout";
 import { MyContext } from "@/context/my-context";
+import { DateProvider } from "@/context/date-context";
+import SelectDate from '../components/molecules/SelectDate';
 
 // import { SupabaseAuthClient } from "@supabase/supabase-js/dist/module/lib/SupabaseAuthClient";
 
@@ -36,11 +38,15 @@ import { MyContext } from "@/context/my-context";
 
   return (
     <MyContext.Provider value={contextValue}>
-      <MantineProvider>
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
-      </MantineProvider>
+    <MantineProvider>
+    
+          <DefaultLayout>
+            <DateProvider>
+                <Component {...pageProps} />
+              </DateProvider>
+            </DefaultLayout>
+    
+    </MantineProvider>
     </MyContext.Provider>
    
   );

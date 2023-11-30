@@ -8,6 +8,8 @@ import useMyContext from '@/context/my-context';
 import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button } from '@mantine/core';
 import Link from 'next/link';
+import DisplaySelectedDate from './DisplaySelectedDate';
+import { useDate } from '@/context/date-context';
 
 export default function Confirm(props) {
   
@@ -39,6 +41,11 @@ export default function Confirm(props) {
     }
   };
 
+
+  // const { selectedDate } = useDate();
+
+  const { selectedDate } = props
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setBookingInfo((prevInfo) => ({
@@ -47,7 +54,7 @@ export default function Confirm(props) {
     }));
   };
 
-  const { campus, stilling, lokale, tidspunkt, dato } = useMyContext(); 
+  const { campus, stilling, lokale, tidspunkt, } = useMyContext(); 
 
   //modal open og close
   const [opened, { open, close }] = useDisclosure(false);
@@ -70,7 +77,9 @@ export default function Confirm(props) {
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Campus: </span>{campus}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Stilling: </span> {stilling}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Lokale Type: </span> {lokale}</p>
-                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span>{dato} kl:{tidspunkt}</p>
+                <DisplaySelectedDate selectedDate={selectedDate}/>
+                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate} kl:{tidspunkt}</p>
+                
             </div>
 
             <Modal opened={opened} onClose={close} className={classes.modal}>
@@ -80,6 +89,8 @@ export default function Confirm(props) {
                     <button className={classes.buttonBlue} onClick={close}>Forside</button>
                 </Link>
             </Modal>
+
+            
             
             <div className={classes.rightSideInfo}>
                 <Image className={classes.img} src={lokaleTwo}/>
