@@ -1,6 +1,8 @@
 import Head from "next/head";
 import Link from "next/link";
 import classes from './index.module.css';
+import styles from './index.module.css'
+import { Box } from "@mantine/core";
 
 export default function Home() {
   return (
@@ -12,9 +14,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
+        <div className={styles.btnBox}>
         <Link href="/login">
           <button className={classes.button}>Book Lokale</button>
         </Link>
+        </div>
       </main>
     </>
   );

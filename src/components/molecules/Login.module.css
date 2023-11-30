@@ -49,3 +49,6 @@
     border: none;
 
 }
+.loginError{
+    color: red;
+}
