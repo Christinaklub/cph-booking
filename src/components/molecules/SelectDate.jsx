@@ -39,32 +39,30 @@ function SelectDate(props) {
             <span className={classes.required}>*</span>Campus:
           </label>
           <select id='campus' className={classes.dropdown} disabled>
-            <option value="" hidden>{campus}</option>
+            <option value="" disabled selected hidden>{campus}</option>
           </select>
           <label htmlFor="stilling" className={classes.label}>
             <span className={classes.required}>*</span>Stilling:
           </label>
           <select id='stilling' className={classes.dropdown} disabled>
-            <option value="" hidden>{stilling}</option>
+            <option value="" disabled selected hidden>{stilling}</option>
           </select>
           <label htmlFor="lokale" className={classes.label}>
             <span className={classes.required}></span>Lokale:
           </label>
           <select id='lokale' className={classes.dropdown} disabled>
-            <option value="" hidden>{lokale}</option>
+            <option value="" disabled selected hidden>{lokale}</option>
           </select>
           <label htmlFor="tidspunkt" className={classes.label}>
             <span className={classes.required}></span>Tidspunkt:
           </label>
           <select id='tidspunkt' className={classes.dropdown} disabled>
-            <option value="" hidden>{tidspunkt}</option>
+            <option value="" disabled selected hidden>{tidspunkt}</option>
           </select>
           <label htmlFor="dato" className={classes.label}>
             <span className={classes.required}></span>Dato:
           </label>
-          <select id='dato' className={classes.dropdown} >
-            <option value="" hidden></option>
-          </select>
+            <DisplaySelectedDate selectedDate={selectedDate}/>
 
             <button className={classes.button} onClick={handleBack}>Tilbage</button>
             <button className={classes.button} onClick={handleNext}>Næste</button>

@@ -77,3 +77,12 @@
   background-color: #fff;
   margin-bottom: 5px;
 }
+.dateDropdown {
+  width: 350px; 
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  margin-bottom: 5px;
+  background-color: #fff;
+}
