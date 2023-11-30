@@ -44,7 +44,7 @@ export default function Confirm(props) {
 
   // const { selectedDate } = useDate();
 
-  const { selectedDate } = props
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -54,7 +54,7 @@ export default function Confirm(props) {
     }));
   };
 
-  const { campus, stilling, lokale, tidspunkt, } = useMyContext(); 
+  const { campus, stilling, lokale, tidspunkt, selectedDate } = useMyContext(); 
 
   //modal open og close
   const [opened, { open, close }] = useDisclosure(false);
@@ -78,7 +78,7 @@ export default function Confirm(props) {
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Stilling: </span> {stilling}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Lokale Type: </span> {lokale}</p>
                 <DisplaySelectedDate selectedDate={selectedDate}/>
-                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate} kl:{tidspunkt}</p>
+                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate.toString()} kl:{tidspunkt}</p>
                 
             </div>
 

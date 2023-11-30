@@ -14,7 +14,7 @@ import SelectDate from '../components/molecules/SelectDate';
     const [stilling, setStilling] = useState("");
     const [lokale, setLokale] = useState("");
     const [tidspunkt, setTidspunkt] = useState("");
-    const [dato, setDato] = useState("");
+    const [selectedDate, setSelectedDate] = useState("");
 
   const contextValue = {
     campus,
@@ -25,8 +25,8 @@ import SelectDate from '../components/molecules/SelectDate';
     setLokale,
     tidspunkt,
     setTidspunkt,
-    dato,
-    setDato,
+    selectedDate,
+    setSelectedDate,
   };
   
 

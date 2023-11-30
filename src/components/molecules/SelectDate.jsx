@@ -17,7 +17,7 @@ function SelectDate(props) {
     const {selectedDate, setSelectedDate} = useDate();
 
     const handleChangeDate = (date) => {
-      setSelectedDate(date);
+      contextValue.setSelectedDate(date)
       console.log('Selected Date:', date);
     };
 
