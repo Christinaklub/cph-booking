@@ -1,8 +1,3 @@
-// import { useState } from 'react';
-// import { Carousel } from '@mantine/carousel';
-// import classes from './SelectInfo.module.css';
-// import useMyContext from '@/context/my-context';
-
 import React, { useState, useEffect } from 'react';
 import classes from './SelectInfo.module.css';
 import useMyContext from '@/context/my-context';
@@ -26,10 +21,40 @@ function SelectInfo(props) {
   }
 
 // ikke os der har kodet det, det er Mathias. Men denne funktion sørger bare for at vi henter den props der sørger for vi kan scroll når vi trykke på next knappen.
-  function handleNext(){
-    console.log("du har trykket på next")
-    props.x.scrollNext();
+  // function handleNext(){
+  //   console.log("du har trykket på next")
+  //   props.x.scrollNext();
+  // }
+
+  function handleNext() {
+    // tjekker om alle dropdowns har valg
+    if (
+      contextValue.campus !== '' &&
+      contextValue.stilling !== '' &&
+      contextValue.lokale !== '' &&
+      contextValue.tidspunkt !== ''
+    ) {
+      // hvis alle dropdowns er valgt så fortsætter vi til næste trin
+      console.log("du har trykket på next");
+      props.x.scrollNext();
+    } else {
+      console.log("Vælg alle dropdowns");
+      // hvis ikke alle dropdowns er valgt vises dette i konsolen
+    }
   }
+
+  // state bliver brugt her for at se om de første to dropdowns er valgt
+  const [areFirstTwoSelected, setAreFirstTwoSelected] = useState(false);
+
+  // funktion for at tjekke om begge de første to dropdowns er valgt
+  useEffect(() => {
+    // hvis både campus og stilling ikke er tomme
+    if (contextValue.campus !== '' && contextValue.stilling !== '') {
+      setAreFirstTwoSelected(true); // så sæt variablen til true
+    } else {
+      setAreFirstTwoSelected(false); // ellers, så sæt den til false
+    }
+  }, [contextValue.campus, contextValue.stilling]);
 
   return (
     <div className={classes.slideContent}>
@@ -61,7 +86,7 @@ function SelectInfo(props) {
               <label htmlFor="lokale" className={classes.label}>
                 Lokale type:
               </label>
-              <select id="lokale" className={classes.dropdown} value={contextValue.lokale} onChange={handleChangeLokale}>
+              <select id="lokale" className={classes.dropdown} value={contextValue.lokale} onChange={handleChangeLokale} disabled={!areFirstTwoSelected}>
                 <option value="" disabled selected hidden>Vælg lokale</option>
                 <option value="mødelokale">Mødelokale</option>
                 <option value="undervisningslokale">Undervisningslokale</option>
@@ -72,7 +97,7 @@ function SelectInfo(props) {
               <label htmlFor="tidspunkt" className={classes.label}>
                 Tidsinterval:
               </label>
-              <select id="tidspunkt" className={classes.dropdown} value={contextValue.tidspunkt} onChange={handleChangeTidspunkt}>
+              <select id="tidspunkt" className={classes.dropdown} value={contextValue.tidspunkt} onChange={handleChangeTidspunkt} disabled={!areFirstTwoSelected}>
                 <option value="" disabled selected hidden>Vælg tidspunkt</option>
                 <option value="08.00-10.00">08.00-10.00</option>
                 <option value="10.00-12.00">10.00-12.00</option>
