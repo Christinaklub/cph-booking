@@ -12,14 +12,15 @@ import { useDate } from '@/context/date-context';
 function SelectDate(props) {
     const contextValue = useMyContext();
 
-    const { campus, stilling, lokale, tidspunkt, } = useMyContext(); 
+    const { campus, stilling, lokale, tidspunkt, selectedDate } = useMyContext(); 
 
-    const {selectedDate, setSelectedDate} = useDate();
+    // const {selectedDate, setSelectedDate} = useDate();
 
     const handleChangeDate = (date) => {
       contextValue.setSelectedDate(date)
       console.log('Selected Date:', date);
     };
+    
 
     function handleNext(){
         console.log("du har trykket på next")
@@ -62,7 +63,12 @@ function SelectDate(props) {
           <label htmlFor="dato" className={classes.label}>
             <span className={classes.required}></span>Dato:
           </label>
-            <DisplaySelectedDate selectedDate={selectedDate}/>
+          <select id='dato' className={classes.dropdown} disabled>
+            <option value="" disabled selected hidden><DisplaySelectedDate selectedDate={selectedDate}/></option>
+          </select>
+
+
+            
 
             <button className={classes.button} onClick={handleBack}>Tilbage</button>
             <button className={classes.button} onClick={handleNext}>Næste</button>

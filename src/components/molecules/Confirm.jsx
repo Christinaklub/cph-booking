@@ -77,8 +77,7 @@ export default function Confirm(props) {
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Campus: </span>{campus}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Stilling: </span> {stilling}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Lokale Type: </span> {lokale}</p>
-                <DisplaySelectedDate selectedDate={selectedDate}/>
-                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate.toString()} kl:{tidspunkt}</p>
+                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate.toString("")} kl:{tidspunkt}</p>
                 
             </div>
 
