@@ -42,10 +42,6 @@ export default function Confirm(props) {
   };
 
 
-  // const { selectedDate } = useDate();
-
-
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setBookingInfo((prevInfo) => ({
@@ -54,9 +50,10 @@ export default function Confirm(props) {
     }));
   };
 
+  // Vi henter variablerne der fanger de specifikke properties fra vores object og retunere det i useMyContext.
   const { campus, stilling, lokale, tidspunkt, selectedDate } = useMyContext(); 
 
-  //modal open og close
+  //modal open og close taget fra Mantine
   const [opened, { open, close }] = useDisclosure(false);
 
 
@@ -77,8 +74,8 @@ export default function Confirm(props) {
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Campus: </span>{campus}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Stilling: </span> {stilling}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Lokale Type: </span> {lokale}</p>
-                <DisplaySelectedDate selectedDate={selectedDate}/>
-                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate.toString()} kl:{tidspunkt}</p>
+                {/* Da DatePicker dato værdi er et INT tilføjer vi "toString("") for at lave dataen om til string så vi kan læse det */}
+                <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate.toString("")} kl:{tidspunkt}</p>
                 
             </div>
 
@@ -95,6 +92,7 @@ export default function Confirm(props) {
             <div className={classes.rightSideInfo}>
                 <Image className={classes.img} src={lokaleTwo}/>
                 <button className={classes.button} onClick={handleBack}>Tilbage</button>
+                {/* onClick har to actions der både submitter vores data til vores database og åbner vores modal. Det er gjort ved at når et event sker så udfører den de to handlinger */}
                 <button className={classes.button} onClick={event => {handleSubmit(); open()}}> bekræft </button>
             </div>
         </div>
