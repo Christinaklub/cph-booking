@@ -14,11 +14,10 @@ import { useDate } from '@/context/date-context';
 export default function Confirm(props) {
   
 
-  //Når man trykker på confirm knappen vil det sendes til databasen 
+  // Funksjonen skal legge ind en bestiling av data til databasen 
   const handleSubmit = async (event) => {
-    // event.preventDefault();
-
     
+    // brukes await til å vente på resultatet av addbooking før den kan gå videre 
     try {
       await addBooking(
         campus,
@@ -28,7 +27,7 @@ export default function Confirm(props) {
         lokale,
       );
       
-      // IDK - setBookingInfo er ikke definert endu, gjør dette til eksamen
+      // Oppdaterer tilstanden til addBooking, og tilbakestiller feltene etter booking 
       setBookingInfo({ 
         Campus: '',
         Stilling: '',
@@ -36,19 +35,12 @@ export default function Confirm(props) {
         Tidspunkt: '',
         Lokaletype: '',
       });
+      // håndterer feil 
     } catch (error) {
       console.error('Feil under innsending av booking:', error.message);
     }
   };
 
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setBookingInfo((prevInfo) => ({
-      ...prevInfo,
-      [name]: value,
-    }));
-  };
 
   // Vi henter variablerne der fanger de specifikke properties fra vores object og retunere det i useMyContext.
   const { campus, stilling, lokale, tidspunkt, selectedDate } = useMyContext(); 
@@ -74,7 +66,7 @@ export default function Confirm(props) {
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Campus: </span>{campus}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Stilling: </span> {stilling}</p>
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Lokale Type: </span> {lokale}</p>
-                {/* Da DatePicker dato værdi er et INT tilføjer vi "toString("") for at lave dataen om til string så vi kan læse det */}
+                {/* Da DatePicker dato værdi er et DATE tilføjer vi "toString("") for at lave dataen om til string så vi kan læse det */}
                 <p className={classes.bodyText}><span className={classes.bodyTextBold}>Dato: </span> {selectedDate.toString("")} kl:{tidspunkt}</p>
                 
             </div>
