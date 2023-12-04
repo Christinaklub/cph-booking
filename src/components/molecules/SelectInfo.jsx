@@ -3,9 +3,11 @@ import classes from './SelectInfo.module.css';
 import useMyContext from '@/context/my-context';
 
 function SelectInfo(props) {
+
+  // Vi opretter en variable og tildeler dev værdien der bliver retuneret af vores useMyContext hook. Det betyder vi kan bruge den for at få adgang til specifikke værdier eller data som useMyContext gør tilgængelig
   const contextValue = useMyContext();
   
-  //sørger for at når du har valgt noget kommer det frem på næste side. 
+  //Vi laver en function der vha. contextValue giver os adgang til vores states der ligger i vores object. event.target.value Ændre værdien af vores set states når det sker en ændring af valg på hjemmesiden. 
   function handleChangeCampus(event) {
     contextValue.setCampus(event.target.value); 
   }
@@ -64,6 +66,7 @@ function SelectInfo(props) {
           <label htmlFor="campus" className={classes.label}>
             <span className={classes.required}>*</span>Campus:
           </label>
+          {/* onChange gør at når der ændres på valg i vores dropdown er det det som bliver lageret i vores ContextValue */}
           <select id="campus" className={classes.dropdown} value={contextValue.campus} onChange={handleChangeCampus}>
           <option value="" disabled selected hidden>Vælg Campus</option>
             <option value="Lyngby">Lyngby</option>
