@@ -86,6 +86,7 @@ function SelectInfo(props) {
               <label htmlFor="lokale" className={classes.label}>
                 Lokale type:
               </label>
+              {/* lokale-vælgeren er kun aktiv, når 'campus' og 'stilling' er valgt. Når både 'campus' og 'stilling' er valgt, bliver variablen areFirstTwoSelected sat til 'true'. */}
               <select id="lokale" className={classes.dropdown} value={contextValue.lokale} onChange={handleChangeLokale} disabled={!areFirstTwoSelected}>
                 <option value="" disabled selected hidden>Vælg lokale</option>
                 <option value="mødelokale">Mødelokale</option>
@@ -97,6 +98,7 @@ function SelectInfo(props) {
               <label htmlFor="tidspunkt" className={classes.label}>
                 Tidsinterval:
               </label>
+              {/* tidspunkt-vælgeren er kun aktiv, når 'campus' og 'stilling' er valgt. Når både 'campus' og 'stilling' er valgt, bliver variablen areFirstTwoSelected sat til 'true'. */}
               <select id="tidspunkt" className={classes.dropdown} value={contextValue.tidspunkt} onChange={handleChangeTidspunkt} disabled={!areFirstTwoSelected}>
                 <option value="" disabled selected hidden>Vælg tidspunkt</option>
                 <option value="08.00-10.00">08.00-10.00</option>
