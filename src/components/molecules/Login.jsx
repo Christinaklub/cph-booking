@@ -7,18 +7,22 @@ import { Checkbox } from '@mantine/core';
 import loginImg from '/public/loginImg.png'
 import Image from 'next/image';
 
+// Her bruger vi useState for de bruger der skal kunne logge ind på bookingsystemet 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [ loginError, setError] = useState (false);
 
+    // Tar fatt i vores supabase for å se hvilke autentication log ind der må komme igjennom 
     const supabase = createClient('https://txxxtrswrqluxdohetsm.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InR4eHh0cnN3cnFsdXhkb2hldHNtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDAwNTE4MjIsImV4cCI6MjAxNTYyNzgyMn0.c5FcVULcw1G-IULur56wxb3wnZZVXz6nkfAmOm1Sipc');
 
+    // Dette er en funksjon som skal configurere hvilke bruger der kan logge ind, og viser feil hvis en annen bruger der ikke har tilgang til å logge ind 
     const handleLogin = async () => {
             let authorized = false;
             setError(false);
 
+                //henter info fra databasen
                 const { data, error } = await supabase.auth.signInWithPassword({
                     email: email,
                     password: password,
@@ -27,7 +31,7 @@ const Login = () => {
                 setIsLoading(false);
     
                 if (data && data.user) {
-                    // Gemme brukerinfo i kontekst eller gjøre noe annet
+                    // Gemme brukerinfo i kontekst og kommer videre til booking siden
                     console.log(data.user.email);
                     window.location.href = "/booking";
                 } else {
@@ -37,8 +41,7 @@ const Login = () => {
                 console.log("Error", error);
     }
 
-
-
+    // Denne funksjonen her er en event som endrer seg ved en hendelse, setEmail funskjonen (linje 12) blir kalt hver gang funksjone i input opdaterer seg 
     const handleEmailChange = (event) => {
         setEmail(event.target.value);
     }
@@ -47,29 +50,14 @@ const Login = () => {
         setPassword(event.target.value);
     }
 
+    // Denne fuksjonen er til hvis passordet og email er riktig
     const handleSubmit = (event) => {
         event.preventDefault();
         setIsLoading(true);
         console.log('Logger ind med', email, password);
         handleLogin ();
-        // loginNewUser();
         // redirecter dig til booking side når dit login er valideret 
     }
-
-    // async function loginNewUser() {
-    //     const { data, error } = await supabase.auth.signInWithPassword({
-    //       email: email,
-    //       password: password,
-    //     })
-    //     setIsLoading(false);
-
-    //     if (data && data.user) {
-    //         // Gemme user info i context.
-    //         console.log(data.user.email);
-    //     }
-    //     console.log("Data", data);
-    //     console.log("Error", error);
-    //   }
 
     return (
         <div className={styles.container} >
