@@ -12,9 +12,7 @@ import loginImg from '/public/loginImg.png'
 export default function NewLogin() {
   return (
     <div>
-
         <Login/>
-
     </div>
   )
 }

@@ -9,6 +9,7 @@ import addBooking from '@/components/molecules/SupabaseTables';
 
 
 export default function Booking() {
+  // Karusell Mathias fikset dette (embla)
   const [embla, setEmbla] = useState(null);
 
   return (
