@@ -33,12 +33,6 @@ import { DateProvider } from "@/context/date-context";
   };
   
 
-  // til database
-  // const { error } = await supabase.from('bookingAvailable').insert(contextValue)
-  //  if (error){
-  //   throw error;
-  //   }catch (error){}
-
   return (
     <MyContext.Provider value={contextValue}>
     <MantineProvider>

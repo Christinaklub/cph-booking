@@ -10,7 +10,7 @@ export default function DefaultLayout({children}) {
   
     <div>
 {/* conditional rendering der kigger på hvor man befinder sig. for er du på andet en /login viser den din header og footer 
-&& brukes til å kombinere to betingelser og gir true hvis betingelsene er true*/}
+    && brukes til å kombinere to betingelser og gir true hvis betingelsene er true*/}
         {router.pathname !== "/login" && <Header/>}
         {children}
         {router.pathname !== "/login" && <Footer/> }

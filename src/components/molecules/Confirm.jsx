@@ -13,7 +13,7 @@ import { useDate } from '@/context/date-context';
 
 export default function Confirm(props) {
   
-
+  
   // Funksjonen skal legge ind en bestiling av data til databasen 
   const handleSubmit = async (event) => {
     
